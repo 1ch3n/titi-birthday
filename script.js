@@ -1,24 +1,34 @@
 /* ==================================
-   TITI 333 BIRTHDAY SYSTEM
-   FINAL JAVASCRIPT
+   TITI BIRTHDAY SYSTEM
+   MULTI PAGE JAVASCRIPT
 ================================== */
 
 
 /* ================================
-GLOBAL STATE
+PAGE NAVIGATION
 ================================ */
 
-let cakeState = {
 
-    cake:"",
-    frosting:"",
-    decorations:[],
-    candles:false
+function goTo(page){
 
-};
+    window.location.href = page;
+
+}
 
 
-let selectedSticker = null;
+
+
+document
+.querySelectorAll("[data-page]")
+.forEach(btn=>{
+
+    btn.onclick=function(){
+
+        goTo(this.dataset.page);
+
+    }
+
+});
 
 
 
@@ -27,45 +37,71 @@ let selectedSticker = null;
 
 
 /* ================================
-LOADING
+LOADING SCREEN
 ================================ */
 
 
-let progress = 0;
-
-
-let loading = setInterval(()=>{
-
-
-progress += 2;
-
-
+let loadingProgress =
 document.getElementById(
 "loading-progress"
-).style.width = progress + "%";
+);
 
 
+let loadingNumber =
 document.getElementById(
 "loading-number"
-).innerText = progress + "%";
+);
 
 
 
-if(progress >=100){
+if(loadingProgress && loadingNumber){
+
+
+let progress=0;
+
+
+let loading=setInterval(()=>{
+
+
+progress+=2;
+
+
+loadingProgress.style.width=
+progress+"%";
+
+
+loadingNumber.innerText=
+progress+"%";
+
+
+
+if(progress>=100){
+
 
 clearInterval(loading);
 
 
+let screen=
 document.getElementById(
 "loading-screen"
-).style.display="none";
+);
+
+
+if(screen){
+
+screen.style.display="none";
+
+}
 
 
 }
 
 
+
 },40);
 
+
+}
 
 
 
@@ -76,28 +112,61 @@ document.getElementById(
 
 
 /* ================================
-START GAME
+MUSIC SYSTEM
 ================================ */
 
 
-document
-.getElementById("start-game")
-.onclick=function(){
+let music =
+document.getElementById(
+"music"
+);
 
 
-document
-.getElementById("welcome")
-.style.display="none";
+
+let musicBtn =
+document.getElementById(
+"music-btn"
+);
 
 
-document
-.getElementById("cake-game")
-.style.display="block";
+
+if(musicBtn && music){
+
+
+musicBtn.onclick=function(){
+
+
+
+if(music.paused){
+
+
+music.play();
+
+
+musicBtn.innerText=
+"🎵 Playing";
+
+
+}
+
+
+else{
+
+
+music.pause();
+
+
+musicBtn.innerText=
+"🎧 Play";
+
+
+}
 
 
 };
 
 
+}
 
 
 
@@ -108,40 +177,81 @@ document
 
 
 /* ================================
-CAKE IMAGE CHANGE
+CAKE SYSTEM
+================================ */
+
+
+let cakeState={
+
+cake:"",
+frosting:"",
+decorations:[],
+candles:false
+
+};
+
+
+
+let selectedSticker=null;
+
+
+
+
+
+
+
+
+
+/* ================================
+CAKE IMAGE
 ================================ */
 
 
 document
 .querySelectorAll(".cake-choice")
-.forEach(button=>{
+.forEach(btn=>{
 
 
-button.onclick=function(){
+btn.onclick=function(){
 
 
-let image =
-this.dataset.image;
-
-
-document
-.querySelector(".cake-body")
-.style.backgroundImage =
-`url("${image}")`;
+let body=
+document.querySelector(
+".cake-body"
+);
 
 
 
-cakeState.cake =
+if(body){
+
+
+body.style.backgroundImage=
+`url("${this.dataset.image}")`;
+
+
+}
+
+
+
+cakeState.cake=
 this.dataset.cake;
 
 
 
-document
-.getElementById(
+let summary=
+document.getElementById(
 "summary-base"
-)
-.innerText =
-this.innerText;
+);
+
+
+
+if(summary){
+
+summary.innerText=
+this.dataset.cake;
+
+}
+
 
 
 };
@@ -172,26 +282,11 @@ document
 button.onclick=function(){
 
 
-let color =
-this.dataset.color;
+let color=this.dataset.color;
 
 
-
-let frosting =
-document.getElementById(
+let frosting=document.getElementById(
 "frosting-layer"
-);
-
-
-
-frosting.style.background = color;
-
-
-/* change dripping color */
-
-frosting.style.setProperty(
-"--drip-color",
-color
 );
 
 
@@ -203,8 +298,7 @@ color
 
 
 
-cakeState.frosting =
-this.innerText;
+cakeState.frosting=this.innerText;
 
 
 
@@ -223,31 +317,22 @@ this.innerText;
 }
 
 
-
 };
 
 
 });
 
-
-
-
-
-
-
-
-
 /* ================================
-ADD DECORATION BUTTONS
+DECORATIONS
 ================================ */
 
 
 document
 .querySelectorAll(".decoration-btn")
-.forEach(button=>{
+.forEach(btn=>{
 
 
-button.onclick=function(){
+btn.onclick=function(){
 
 
 addSticker(
@@ -266,52 +351,30 @@ this.dataset.image
 
 
 
-
-
-/* ================================
-CREATE STICKER
-================================ */
-
-
 function addSticker(src){
 
 
-let sticker =
-document.createElement("img");
+let sticker=
+document.createElement(
+"img"
+);
 
 
 
-sticker.src =
-src;
+sticker.src=src;
 
 
-
-sticker.className =
+sticker.className=
 "cake-sticker";
 
 
 
-/*
- random position on cake top
- no empty corner
-*/
+sticker.style.left=
+Math.random()*150+"px";
 
 
-sticker.style.left =
-Math.floor(
-Math.random()*150
-)
-+"px";
-
-
-
-sticker.style.top =
-Math.floor(
-Math.random()*35
-)
-+"px";
-
-
+sticker.style.top=
+Math.random()*60+"px";
 
 
 
@@ -328,16 +391,17 @@ selectSticker(this);
 
 
 
-
-makeDraggable(sticker);
-
-
-
-document
-.getElementById(
+let layer =
+document.getElementById(
 "decoration-layer"
-)
-.appendChild(sticker);
+);
+
+
+if(layer){
+
+    layer.appendChild(sticker);
+
+}
 
 
 
@@ -345,14 +409,21 @@ cakeState.decorations.push(src);
 
 
 
-document
-.getElementById(
+let summary=
+document.getElementById(
 "summary-decoration"
-)
-.innerText =
-cakeState.decorations.length
-+
+);
+
+
+
+if(summary){
+
+summary.innerText=
+cakeState.decorations.length+
 " stickers";
+
+}
+
 
 
 }
@@ -363,11 +434,6 @@ cakeState.decorations.length
 
 
 
-
-
-/* ================================
-SELECT STICKER
-================================ */
 
 
 function selectSticker(sticker){
@@ -375,46 +441,46 @@ function selectSticker(sticker){
 
 if(selectedSticker){
 
+selectedSticker.classList.remove(
+"selected"
+);
 
-selectedSticker
-.classList
-.remove("selected");
+}
+
+
+
+selectedSticker=sticker;
+
+
+sticker.classList.add(
+"selected"
+);
 
 
 }
 
 
 
-selectedSticker =
-sticker;
-
-
-
-sticker
-.classList
-.add("selected");
-
-
-}
 
 
 
 
 
 
+/* DELETE */
 
 
-
-/* ================================
-DELETE STICKER
-================================ */
-
-
-document
-.getElementById(
+let deleteBtn=
+document.getElementById(
 "delete-sticker"
-)
-.onclick=function(){
+);
+
+
+
+if(deleteBtn){
+
+
+deleteBtn.onclick=function(){
 
 
 if(selectedSticker){
@@ -429,9 +495,11 @@ selectedSticker=null;
 }
 
 
+
 };
 
 
+}
 
 
 
@@ -439,69 +507,83 @@ selectedSticker=null;
 
 
 
-/* ================================
-RESET STICKERS
-================================ */
 
 
-document
-.getElementById(
+
+
+/* RESET */
+
+
+let clearBtn=
+document.getElementById(
 "clear-stickers"
-)
-.onclick=function(){
+);
 
 
-document
-.getElementById(
+
+if(clearBtn){
+
+
+clearBtn.onclick=function(){
+
+
+let layer=
+document.getElementById(
 "decoration-layer"
-)
-.innerHTML="";
+);
 
+
+
+if(layer){
+
+layer.innerHTML="";
+
+}
 
 
 cakeState.decorations=[];
 
 
-
-document
-.getElementById(
-"summary-decoration"
-)
-.innerText="-";
-
-
 };
 
 
 
+}
 
 
 
 
 
 
-/* ================================
-UPLOAD STICKER
-================================ */
 
 
-document
-.getElementById(
+
+/* UPLOAD */
+
+
+let upload=
+document.getElementById(
 "decoration-upload"
-)
-.onchange=function(e){
+);
 
 
-let file =
+
+if(upload){
+
+
+upload.onchange=function(e){
+
+
+let file=
 e.target.files[0];
 
 
-if(!file)
-return;
+
+if(!file)return;
 
 
 
-let reader =
+let reader=
 new FileReader();
 
 
@@ -521,142 +603,13 @@ event.target.result
 reader.readAsDataURL(file);
 
 
+
 };
 
 
-
-
-
-
-
-
-
-/* ================================
-DRAG STICKERS
-IPHONE TOUCH
-================================ */
-
-
-function makeDraggable(element){
-
-
-let moving=false;
-
-
-let offsetX=0;
-
-let offsetY=0;
-
-
-
-element.addEventListener(
-"touchstart",
-function(e){
-
-
-selectSticker(element);
-
-
-
-moving=true;
-
-
-
-let touch =
-e.touches[0];
-
-
-offsetX =
-touch.clientX -
-element.offsetLeft;
-
-
-
-offsetY =
-touch.clientY -
-element.offsetTop;
-
-
-});
-
-
-
-
-
-
-element.addEventListener(
-"touchmove",
-function(e){
-
-
-
-if(!moving)
-return;
-
-
-
-let touch =
-e.touches[0];
-
-
-
-let parent =
-document.getElementById(
-"decoration-layer"
-);
-
-
-
-let rect =
-parent.getBoundingClientRect();
-
-
-
-
-element.style.left =
-
-(
-touch.clientX -
-rect.left -
-offsetX
-
-)
-+"px";
-
-
-
-
-element.style.top =
-
-(
-touch.clientY -
-rect.top -
-offsetY
-
-)
-+"px";
-
-
-});
-
-
-
-
-
-
-
-element.addEventListener(
-"touchend",
-function(){
-
-
-moving=false;
-
-
-});
-
-
 }
+
+
 
 
 
@@ -671,18 +624,21 @@ CANDLES
 ================================ */
 
 
-document
-.getElementById(
+let candleBtn=
+document.getElementById(
 "light-candles"
-)
-.onclick=function(){
+);
 
+
+
+if(candleBtn){
+
+
+candleBtn.onclick=function(){
 
 
 document
-.querySelectorAll(
-".candle"
-)
+.querySelectorAll(".candle")
 .forEach(c=>{
 
 
@@ -702,123 +658,262 @@ cakeState.candles=true;
 
 
 
+}
 
 
 
 
 
+
+
+
+
+
+
+/* ================================
+WISH PAGE
+================================ */
+
+
+let saveWish=
+document.getElementById(
+"save-wish"
+);
+
+
+
+let wishInput=
+document.getElementById(
+"wish-input"
+);
+
+
+
+let wishDisplay=
+document.getElementById(
+"saved-wish"
+);
+
+
+
+
+if(saveWish){
+
+
+saveWish.onclick=function(){
+
+
+
+let wish=
+wishInput.value;
+
+
+
+localStorage.setItem(
+"titiWish",
+wish
+);
+
+
+
+wishDisplay.innerText=
+wish;
+
+
+
+};
+
+
+
+}
+
+
+
+if(wishDisplay){
+
+
+let oldWish=
+localStorage.getItem(
+"titiWish"
+);
+
+
+
+if(oldWish){
+
+wishDisplay.innerText=
+oldWish;
+
+}
+
+
+
+}
+/* ================================
+LOAD SAVED CAKE
+================================ */
+
+let wishCake =
+document.getElementById(
+"wish-cake"
+);
+
+if(wishCake){
+
+    let savedCake =
+    localStorage.getItem(
+    "titiCake"
+    );
+
+    if(savedCake){
+
+        wishCake.innerHTML =
+        savedCake;
+
+    }
+
+    else{
+
+        wishCake.innerHTML =
+        "<p>🎂 No cake found.<br>Please make a cake first! ♡</p>";
+
+    }
+
+}
+
+/* ================================
+BLOW CANDLES
+================================ */
+
+let blowBtn =
+document.getElementById(
+"blow-candle"
+);
+
+
+if(blowBtn){
+
+    blowBtn.onclick=function(){
+
+
+        let candles =
+        document.querySelectorAll(
+        "#wish-cake .candle"
+        );
+
+
+        candles.forEach(candle=>{
+
+            candle.classList.remove("fire");
+
+        });
+
+
+
+        blowBtn.innerHTML =
+        "✨ Wish Made ♡";
+
+
+
+        // show celebration
+
+        let celebration =
+        document.getElementById(
+        "celebration"
+        );
+
+
+        if(celebration){
+
+            celebration.style.display="flex";
+
+        }
+
+
+    };
+
+}
+
+
+
+// close celebration button
+
+let closeCelebration =
+document.getElementById(
+"close-celebration"
+);
+
+
+if(closeCelebration){
+
+closeCelebration.onclick=function(){
+
+document.getElementById(
+"celebration"
+).style.display="none";
+
+
+};
+
+}
 
 /* ================================
 FINISH CAKE
 ================================ */
 
-
-document
-.getElementById(
+let finishBtn =
+document.getElementById(
 "finish-cake"
-)
-.onclick=function(){
-
-
-
-document
-.getElementById(
-"cake-game"
-)
-.style.display="none";
-
-
-
-document
-.getElementById(
-"cake-result"
-)
-.style.display="block";
-
-
-
-
-let old =
-document
-.querySelector(
-"#final-cake .cake"
 );
 
+if(finishBtn){
 
+    finishBtn.onclick=function(){
 
-if(old){
+        let cake =
+        document.querySelector(".cake");
 
-old.remove();
+        if(cake){
+
+            localStorage.setItem(
+                "titiCake",
+                cake.outerHTML
+            );
+
+        }
+
+        alert("Cake saved! ♡");
+    };
 
 }
 
 
 
-let clone =
-document
-.querySelector(".cake")
-.cloneNode(true);
-
+/* ================================
+MESSAGE CARDS
+================================ */
 
 
 document
-.getElementById(
-"final-cake"
-)
-.appendChild(clone);
+.querySelectorAll(".love-card")
+.forEach(card=>{
+
+
+card.onclick=function(){
+
+
+this.classList.toggle(
+"flip"
+);
 
 
 
 };
 
-
-
-
-
-
-
-
-
-/* ================================
-ENTER WORLD
-================================ */
-
-
-document
-.getElementById(
-"enter-world"
-)
-.onclick=function(){
-
-
-document
-.getElementById(
-"cake-result"
-)
-.style.display="none";
-
-
-
-document
-.getElementById(
-"birthday-world"
-)
-.style.display="block";
-
-
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
 
 });
 
 
-};
-
-
 
 
 
@@ -827,48 +922,61 @@ behavior:"smooth"
 
 
 /* ================================
-MUSIC
+HOME BUTTONS
 ================================ */
 
 
-let music =
+let cakeBtn=
 document.getElementById(
-"music"
+"cake-button"
 );
 
 
 
-document
-.getElementById(
-"music-btn"
-)
-.onclick=function(){
+if(cakeBtn){
 
+cakeBtn.onclick=function(){
 
-
-if(music.paused){
-
-
-music.play();
-
-
-this.innerText =
-"🎵 Playing";
-
-
-}
-
-else{
-
-
-music.pause();
-
-
-this.innerText =
-"🎧 Play";
-
-
-}
-
+goTo("cake.html");
 
 };
+
+}
+
+
+
+let messageBtn=
+document.getElementById(
+"message-button"
+);
+
+
+
+if(messageBtn){
+
+messageBtn.onclick=function(){
+
+goTo("message.html");
+
+};
+
+}
+
+
+
+let wishBtn=
+document.getElementById(
+"wish-button"
+);
+
+
+
+if(wishBtn){
+
+wishBtn.onclick=function(){
+
+goTo("wish.html");
+
+};
+
+}

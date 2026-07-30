@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Create Titi's Cake ♡
+</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- BACKGROUND -->
+
+<div class="floating-stickers">
+
+<img src="images/db.jpeg" class="pompompurin p1">
+
+<img src="images/db.jpeg" class="pompompurin p2">
+
+<img src="images/db.jpeg" class="pompompurin p3">
+
+
+<span class="white-heart h1">♡</span>
+<span class="white-heart h2">♡</span>
+<span class="white-heart h3">♡</span>
+
+</div>
+
+
+
+
+
+
+
+<!-- LOADING -->
+
+
+<div id="loading-screen">
+
+
+<div class="loading-logo">
+
+♡ TITI.EXE ♡
+
+</div>
+
+
+<p>
+Preparing cake system...
+</p>
+
+
+<div class="loading-bar">
+
+<div id="loading-progress"></div>
+
+</div>
+
+
+<span id="loading-number">
+0%
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<a href="index.html">
+
+<button class="back-home">
+
+← Home
+
+</button>
+
+</a>
+
+
+
+
+
+
+
+
+
+<section id="cake-game">
+
+
+<h1>
+
+🎂 Create Titi's Cake
+
+</h1>
+
+
+<p>
+
+Customize your birthday cake ♡
+
+</p>
+
+
+
+
+
+
+
+
+
+<!-- CAKE PREVIEW -->
+
+
+<div id="cake-preview">
+
+
+<div class="cake">
+
+
+
+<!-- candles -->
+
+<div id="candle-layer">
+
+
+<div class="candle"></div>
+
+<div class="candle"></div>
+
+<div class="candle"></div>
+
+
+</div>
+
+
+
+
+
+<!-- decorations -->
+
+
+<div id="decoration-layer"></div>
+
+
+
+
+
+<!-- frosting -->
+
+
+<div id="frosting-layer"></div>
+
+
+
+
+
+<!-- cake top -->
+
+
+<div class="cake-top"></div>
+
+
+
+
+
+<!-- cake body -->
+
+
+<div class="cake-body"></div>
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- CAKE STYLE -->
+
+
+<div class="custom-step">
+
+
+<h3>
+
+01 Choose Cake Style
+
+</h3>
+
+
+
+<div class="choice-grid">
+
+
+
+<button 
+class="cake-choice"
+data-cake="star"
+data-image="images/cakes/star.jpeg">
+
+⭐
+
+<br>
+
+Star Cake
+
+</button>
+
+
+
+
+<button 
+class="cake-choice"
+data-cake="strawberry"
+data-image="images/cakes/strawberry-choco.jpeg">
+
+🍓
+
+<br>
+
+Strawberry Choco
+
+</button>
+
+
+
+
+<button 
+class="cake-choice"
+data-cake="333"
+data-image="images/cakes/333.jpeg">
+
+♡
+
+<br>
+
+333 Cake
+
+</button>
+
+
+
+
+<button 
+class="cake-choice"
+data-cake="yiyi"
+data-image="images/cakes/yiyi.jpeg">
+
+✦
+
+<br>
+
+Yiyi Cake
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- FROSTING -->
+
+
+<div class="custom-step">
+
+
+<h3>
+
+02 Choose Frosting Color
+
+</h3>
+
+
+
+<div class="choice-grid">
+
+
+
+<button 
+class="frosting-choice"
+data-color="#ff69b4">
+
+Strawberry Cream
+
+</button>
+
+
+
+<button 
+class="frosting-choice"
+data-color="#ffe9a8">
+
+Vanilla Cream
+
+</button>
+
+
+
+<button 
+class="frosting-choice"
+data-color="#cceeff">
+
+Baby Blue Cream
+
+</button>
+
+
+
+<button 
+class="frosting-choice"
+data-color="#eadcff">
+
+Lavender Cream
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- DECORATIONS -->
+
+
+<div class="custom-step">
+
+
+<h3>
+
+03 Decorate Cake
+
+</h3>
+
+
+<p>
+
+Tap sticker to add ♡
+
+</p>
+
+
+
+
+
+<div class="preset-decoration">
+
+
+
+<button 
+class="decoration-btn"
+data-image="images/decorations/dudububu.png">
+
+🎀 Dudu & Bubu
+
+</button>
+
+
+
+
+<button 
+class="decoration-btn"
+data-image="images/decorations/pmilk.png">
+
+🍮 Pom Pom Purin
+
+</button>
+
+
+
+
+<button 
+class="decoration-btn"
+data-image="images/decorations/panda.png">
+
+🐼 Panda
+
+</button>
+
+
+
+
+<button 
+class="decoration-btn"
+data-image="images/decorations/gloomybear.png">
+
+🐻 Gloomy Bear
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<p>
+
+Upload your own sticker:
+
+</p>
+
+
+
+<input
+
+type="file"
+
+id="decoration-upload"
+
+accept="image/*"
+
+>
+
+
+
+
+
+<br><br>
+
+
+
+<button id="delete-sticker">
+
+🗑 Delete Selected
+
+</button>
+
+
+
+<button id="clear-stickers">
+
+Reset Decorations
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- CANDLES -->
+
+
+<div class="custom-step">
+
+
+<h3>
+
+04 Make A Wish ✨
+
+</h3>
+
+
+
+<button id="light-candles">
+
+Light Candles 🕯
+
+</button>
+
+
+
+<p>
+
+Tap candles to light them
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<button id="finish-cake">
+
+Finish Cake 🎂
+
+</button>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- RESULT -->
+
+
+<section id="cake-result">
+
+
+<h1>
+
+Your Cake For Titi ♡
+
+</h1>
+
+
+
+
+<div id="final-cake">
+
+
+</div>
+
+
+
+
+
+<div class="cake-summary">
+
+
+
+<p>
+
+Cake:
+
+<span id="summary-base">
+-
+</span>
+
+</p>
+
+
+
+
+<p>
+
+Decorations:
+
+<span id="summary-decoration">
+-
+</span>
+
+</p>
+
+
+
+
+<p>
+
+Frosting:
+
+<span id="summary-frosting">
+-
+</span>
+
+</p>
+
+
+
+
+</div>
+
+
+
+
+
+<a href="index.html">
+
+<button>
+
+Back Home ♡
+
+</button>
+
+</a>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- MUSIC -->
+
+
+<audio id="music" loop>
+
+
+<source src="music/Thaiboy_Digital_-_B_with_U_KLICKAUD.mp3">
+
+
+</audio>
+
+
+
+
+<button id="music-btn">
+
+🎧 Play
+
+</button>
+
+
+
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
