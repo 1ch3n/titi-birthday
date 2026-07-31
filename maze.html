@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Amsterdam to Anyang ♡</title>
+
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+
+<body class="maze-page-body">
+
+  <!-- Soft background decorations -->
+
+  <div class="floating-stickers" aria-hidden="true">
+    <img
+      src="images/db.jpeg"
+      class="pompompurin p1"
+      alt=""
+    >
+
+    <img
+      src="images/db.jpeg"
+      class="pompompurin p2"
+      alt=""
+    >
+
+    <img
+      src="images/db.jpeg"
+      class="pompompurin p3"
+      alt=""
+    >
+
+    <span class="white-heart h1">♡</span>
+    <span class="white-heart h2">♡</span>
+    <span class="white-heart h3">♡</span>
+  </div>
+
+
+  <!-- Loading screen -->
+
+  <div id="loading-screen">
+
+    <div class="loading-logo">
+      ♡ TITI.EXE ♡
+    </div>
+
+    <p>
+      Preparing our journey...
+    </p>
+
+    <div class="loading-bar">
+      <div id="loading-progress"></div>
+    </div>
+
+    <span id="loading-number">
+      0%
+    </span>
+
+  </div>
+
+
+  <!-- Back button -->
+
+  <a href="index.html" class="maze-back-home">
+    ← Home
+  </a>
+
+
+  <!-- Main journey page -->
+
+  <main id="journey-page">
+
+    <header class="journey-header">
+
+      <p class="journey-label">
+        LONG DISTANCE BIRTHDAY QUEST
+      </p>
+
+      <h1>
+        Amsterdam
+        <span>to Anyang ♡</span>
+      </h1>
+
+      <p class="journey-description">
+        Help the traveler find the way from Amsterdam to Yichen in
+        Anyang, China.
+      </p>
+
+    </header>
+
+
+    <div class="journey-layout">
+
+      <!-- 3D globe -->
+
+      <section class="journey-panel globe-panel">
+
+        <div class="panel-heading">
+          <div>
+            <span class="panel-number">01</span>
+            <h2>Our Distance</h2>
+          </div>
+
+          <span class="live-indicator">
+            ● LIVE ROUTE
+          </span>
+        </div>
+
+        <div id="globe-container">
+          <div id="globeViz"></div>
+        </div>
+
+
+        <!-- Animated journey -->
+
+        <div class="travel-progress">
+
+          <div class="travel-city">
+            <span class="city-icon">🏠</span>
+
+            <div>
+              <strong>Amsterdam</strong>
+              <small>Titi</small>
+            </div>
+          </div>
+
+          <div class="travel-line">
+
+            <div class="travel-dashes"></div>
+
+            <div id="travel-person" aria-label="Traveler">
+              🧍
+            </div>
+
+          </div>
+
+          <div class="travel-city travel-city-end">
+            <span class="city-icon">💖</span>
+
+            <div>
+              <strong>Anyang</strong>
+              <small>Yichen</small>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- Maze -->
+
+      <section class="journey-panel maze-game-panel">
+
+        <div class="panel-heading">
+
+          <div>
+            <span class="panel-number">02</span>
+            <h2>Find Yichen</h2>
+          </div>
+
+          <span id="move-counter">
+            0 moves
+          </span>
+
+        </div>
+
+        <p class="maze-instructions">
+          Use the arrow keys, WASD, or the buttons below to reach the
+          heart.
+        </p>
+
+        <div class="maze-wrapper">
+          <div
+            id="maze"
+            role="application"
+            aria-label="Amsterdam to Anyang maze game"
+          ></div>
+        </div>
+
+
+        <!-- Mobile controls -->
+
+        <div class="maze-controls" aria-label="Maze controls">
+
+          <button
+            type="button"
+            class="maze-control maze-up"
+            data-direction="up"
+            aria-label="Move up"
+          >
+            ↑
+          </button>
+
+          <button
+            type="button"
+            class="maze-control maze-left"
+            data-direction="left"
+            aria-label="Move left"
+          >
+            ←
+          </button>
+
+          <button
+            type="button"
+            class="maze-control maze-down"
+            data-direction="down"
+            aria-label="Move down"
+          >
+            ↓
+          </button>
+
+          <button
+            type="button"
+            class="maze-control maze-right"
+            data-direction="right"
+            aria-label="Move right"
+          >
+            →
+          </button>
+
+        </div>
+
+
+        <div class="maze-footer">
+
+          <p id="maze-status" aria-live="polite">
+            Guide Titi to the heart in Anyang ♡
+          </p>
+
+          <button id="reset-maze" type="button">
+            Restart Journey
+          </button>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- Celebration overlay -->
+
+  <div id="journey-celebration" aria-hidden="true">
+
+    <div class="journey-celebration-card">
+
+      <div class="celebration-hearts">
+        ♡ ✦ ♡
+      </div>
+
+      <h2>
+        You Made It!
+      </h2>
+
+      <p>
+        From Amsterdam all the way to Anyang ♡
+      </p>
+
+      <button id="play-again" type="button">
+        Play Again
+      </button>
+
+      <a href="index.html" class="celebration-home-link">
+        Return Home
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- Music -->
+
+  <audio id="music" loop>
+    <source
+      src="music/Thaiboy_Digital_-_B_with_U_KLICKAUD.mp3"
+      type="audio/mpeg"
+    >
+  </audio>
+
+  <button id="music-btn" type="button">
+    🎧 Play
+  </button>
+
+
+  <!-- 3D globe library -->
+
+  <script src="https://unpkg.com/globe.gl"></script>
+
+  <!-- Existing global script -->
+
+  <script src="script.js?v=5"></script>
+
+  <!-- Maze-specific script -->
+
+  <script src="maze.js?v=5"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+/* ==================================================
+   OPTIONAL: USE ONE SOFT IMAGE BACKGROUND ON ALL PAGES
+
+   1. Put your chosen image at:
+      images/site-background.jpg
+
+   2. Link this file AFTER style.css on every HTML page:
+      <link rel="stylesheet" href="site-background-override.css">
+================================================== */
+
+html {
+  min-height: 100%;
+  background: #f7edf2;
+}
+
+body {
+  position: relative;
+  min-height: 100svh;
+  background: #f7edf2 !important;
+  isolation: isolate;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+
+  background:
+    url("images/site-background.jpg") center / cover no-repeat fixed,
+    linear-gradient(135deg, #f9eff2, #edf5f7);
+
+  filter:
+    saturate(0.62)
+    contrast(0.72)
+    brightness(1.08);
+
+  transform: scale(1.025);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 248, 242, 0.82),
+      rgba(248, 226, 237, 0.77)
+    );
+
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* Make content panels slightly calmer over the image. */
+.page,
+#home-page,
+#cake-game,
+#cake-result,
+.postcard,
+.custom-step,
+.love-card .front,
+.love-card .back {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
