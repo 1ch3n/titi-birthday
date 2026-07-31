@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7edf2">
+  <title>Amsterdam to Anyang ♡</title>
+
+  <!-- Keep your original shared styles first -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="journey.css?v=7">
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.184.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+
+<body class="journey-page">
+  <a class="journey-home" href="index.html" aria-label="Return to the home page">← Home</a>
+
+  <main class="journey-shell">
+    <header class="journey-header">
+      <p class="journey-kicker">TITI.EXE · DISTANCE QUEST</p>
+      <h1>From Amsterdam<br>to Anyang ♡</h1>
+      <p>
+        Find the portal in the maze. When you reach it, your tiny traveler will
+        cross the globe to meet Yichen in China.
+      </p>
+    </header>
+
+    <section class="journey-layout" aria-label="Distance journey game">
+      <article class="glass-panel globe-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="step-number">02</span>
+            <h2>Across the world</h2>
+          </div>
+          <span id="route-badge" class="status-badge">Locked</span>
+        </div>
+
+        <div id="globe-stage" aria-label="Interactive 3D globe showing Amsterdam and Anyang"></div>
+
+        <div class="route-copy" aria-live="polite">
+          <div class="route-city">
+            <span class="city-dot user-dot"></span>
+            <span><strong>Amsterdam</strong><small>You</small></span>
+          </div>
+
+          <div class="route-line" aria-hidden="true"><span id="route-progress"></span></div>
+
+          <div class="route-city route-city-end">
+            <span><strong>Anyang</strong><small>Yichen</small></span>
+            <span class="city-dot yichen-dot"></span>
+          </div>
+        </div>
+
+        <p id="journey-status" class="journey-status">
+          Complete the maze to begin the journey.
+        </p>
+
+        <button id="replay-journey" class="secondary-action" type="button" disabled>
+          Replay journey
+        </button>
+      </article>
+
+      <article class="glass-panel maze-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="step-number">01</span>
+            <h2>Find the heart portal</h2>
+          </div>
+          <span id="move-count" class="status-badge">0 moves</span>
+        </div>
+
+        <p class="maze-instructions">
+          Use your arrow keys, WASD, or the buttons below. Guide the Amsterdam
+          traveler to the glowing heart.
+        </p>
+
+        <div class="maze-frame">
+          <div id="maze" role="application" aria-label="Maze mini-game" tabindex="0"></div>
+        </div>
+
+        <div class="maze-controls" aria-label="Touch controls">
+          <button class="maze-key up" type="button" data-move="up" aria-label="Move up">↑</button>
+          <button class="maze-key left" type="button" data-move="left" aria-label="Move left">←</button>
+          <button class="maze-key down" type="button" data-move="down" aria-label="Move down">↓</button>
+          <button class="maze-key right" type="button" data-move="right" aria-label="Move right">→</button>
+        </div>
+
+        <div class="maze-actions">
+          <button id="new-maze" class="secondary-action" type="button">New maze</button>
+          <span class="maze-legend"><b>🧍</b> You <b>♡</b> Portal</span>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div id="arrival-modal" class="arrival-modal" aria-hidden="true">
+    <div class="arrival-card" role="dialog" aria-modal="true" aria-labelledby="arrival-title">
+      <span class="arrival-sparkles" aria-hidden="true">✦ ♡ ✦</span>
+      <p class="journey-kicker">DESTINATION REACHED</p>
+      <h2 id="arrival-title">You found me in Anyang ♡</h2>
+      <p>
+        No matter how many walls or kilometers are between us, there is always
+        a little route that leads you back to me.
+      </p>
+      <div class="arrival-actions">
+        <button id="close-arrival" type="button">Stay on this page</button>
+        <a href="message.html">Open Yiyi's message →</a>
+      </div>
+    </div>
+  </div>
+
+  <audio id="music" loop>
+    <source src="music/Thaiboy_Digital_-_B_with_U_KLICKAUD.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="music-btn" type="button">🎧 Play</button>
+
+  <script type="module" src="journey.js?v=7"></script>
+</body>
+</html>

@@ -1,0 +1,3539 @@
+/* ==================================
+   TITI BIRTHDAY SYSTEM
+   MULTI PAGE CSS
+   Bladee 333 x Harajuku Dream Core
+================================== */
+
+/* ===============================
+CUSTOM STRAWBERRY CURSOR
+=============================== */
+
+body{
+
+cursor:
+url("images/strawberry-cursor.png") 16 16,
+auto;
+
+}
+
+
+button,
+a,
+.cake-sticker{
+
+cursor:
+url("images/heart.png") 16 16,
+pointer;
+
+}
+
+/* ===============================
+VARIABLES
+=============================== */
+
+:root{
+
+--pink:#ffd2e5;
+--blue:#cceeff;
+--cream:#fff7e8;
+--lavender:#eadcff;
+--white:#ffffff;
+
+--text:#796977;
+
+--shadow:
+rgba(255,170,210,.35);
+
+}
+
+
+
+
+
+/* ===============================
+GLOBAL
+=============================== */
+
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+font-family:
+"Arial Rounded MT Bold",
+"Helvetica Neue",
+sans-serif;
+
+}
+
+
+body{
+
+min-height:100vh;
+
+color:var(--text);
+
+
+background:
+
+radial-gradient(
+circle at top,
+white,
+transparent 35%
+),
+
+
+linear-gradient(
+180deg,
+var(--cream),
+var(--pink),
+var(--blue)
+);
+
+
+overflow-x:hidden;
+
+}
+
+
+
+
+
+button{
+
+
+border:none;
+
+padding:14px 25px;
+
+border-radius:40px;
+
+
+background:
+
+rgba(255,255,255,.8);
+
+
+color:#d77da2;
+
+font-weight:bold;
+
+
+cursor:
+url("images/heart.png") 16 16,
+pointer;
+
+
+box-shadow:
+
+0 10px 25px var(--shadow);
+
+
+transition:.25s;
+
+
+}
+
+
+
+button:hover{
+
+transform:translateY(-3px);
+
+}
+
+
+button:active{
+
+transform:scale(.95);
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+FLOATING DECOR
+=============================== */
+
+
+.floating-stickers{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+z-index:10;
+
+}
+
+
+.pompompurin{
+
+position:absolute;
+
+width:30px;
+
+height:30px;
+
+object-fit:contain;
+
+animation:float 8s infinite;
+
+}
+
+
+
+.p1{
+
+top:15%;
+left:8%;
+
+}
+
+
+.p2{
+
+bottom:20%;
+right:10%;
+
+animation-delay:3s;
+
+}
+
+
+
+.p3{
+
+top:55%;
+left:20%;
+
+animation-delay:5s;
+
+}
+
+
+
+.white-heart{
+
+position:absolute;
+
+color:white;
+
+font-size:25px;
+
+}
+
+
+
+.h1{
+
+top:20%;
+right:15%;
+
+}
+
+
+.h2{
+
+bottom:25%;
+left:15%;
+
+}
+
+
+
+.h3{
+
+top:65%;
+right:35%;
+
+}
+
+
+
+@keyframes float{
+
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}
+
+
+
+
+
+
+
+/* ===============================
+LOADING
+=============================== */
+
+
+#loading-screen{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+
+background:
+
+linear-gradient(
+135deg,
+#fff7e8,
+#ffd2e5,
+#cceeff
+);
+
+
+z-index:999;
+
+
+}
+
+
+.loading-logo{
+
+font-size:45px;
+
+color:white;
+
+text-shadow:
+0 0 15px pink;
+
+}
+
+
+
+.loading-bar{
+
+width:70%;
+
+height:12px;
+
+background:white;
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-top:20px;
+
+}
+
+
+#loading-progress{
+
+height:100%;
+
+width:0;
+
+background:
+
+linear-gradient(
+90deg,
+pink,
+blue
+);
+
+}
+
+
+
+
+
+
+
+/* ===============================
+PAGE CONTAINER
+=============================== */
+
+
+.page{
+
+min-height:100vh;
+
+padding:50px 20px;
+
+text-align:center;
+
+}
+
+
+
+
+
+.issue,
+.magazine-title{
+
+
+background:white;
+
+display:inline-block;
+
+padding:10px 25px;
+
+border-radius:40px;
+
+letter-spacing:3px;
+
+font-size:14px;
+
+}
+
+
+
+
+
+
+h1{
+
+font-size:45px;
+
+color:white;
+
+text-shadow:
+
+0 0 15px #ff9fc4;
+
+
+margin:30px;
+
+}
+
+
+
+h2{
+
+margin:30px;
+
+color:#d77da2;
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+HOME
+=============================== */
+
+
+.home-buttons{
+
+
+display:flex;
+
+flex-direction:column;
+
+gap:25px;
+
+align-items:center;
+
+margin-top:50px;
+
+}
+
+
+
+.home-buttons button{
+
+
+width:260px;
+
+font-size:18px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+CAKE SYSTEM FIX
+=============================== */
+
+
+.cake{
+
+position:relative;
+
+width:220px;
+
+height:200px;
+
+margin:40px auto;
+
+}
+
+
+
+/* cake body */
+
+.cake-body{
+
+position:absolute;
+
+bottom:0;
+
+left:0;
+
+
+width:220px;
+
+height:120px;
+
+
+background-size:cover;
+
+background-position:center;
+
+
+border-radius:
+
+30px 30px 45px 45px;
+
+
+overflow:hidden;
+
+
+box-shadow:
+
+0 20px 35px rgba(0,0,0,.15);
+
+
+}
+
+
+
+/* ===============================
+DRIPPING FROSTING
+=============================== */
+
+#frosting-layer {
+
+    position:absolute;
+
+    top:60px;
+
+    left:0;
+
+    width:220px;
+
+    height:45px;
+
+    background:var(--frosting-color,#fff5f8);
+
+    z-index:20;
+
+    border-radius:
+    30px 30px 15px 15px;
+
+    transition:.3s;
+
+}
+
+
+/* dripping part */
+
+#frosting-layer::before {
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-25px;
+
+    left:20px;
+
+    width:25px;
+
+    height:35px;
+
+
+    background:var(--frosting-color,#fff5f8);
+
+
+    border-radius:
+    0 0 20px 20px;
+
+
+    box-shadow:
+
+    45px 10px 0 var(--frosting-color,#fff5f8),
+
+    95px -5px 0 var(--frosting-color,#fff5f8),
+
+    145px 8px 0 var(--frosting-color,#fff5f8);
+
+
+}/* candles sit on cake top */
+
+#candle-layer{
+
+
+position:absolute;
+
+
+top:25px;
+
+
+left:0;
+
+
+width:220px;
+
+
+height:60px;
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+align-items:flex-start;
+
+
+gap:20px;
+
+
+z-index:100;
+
+
+}
+
+
+
+.candle{
+
+
+width:10px;
+
+
+height:45px;
+
+
+background:white;
+
+
+border-radius:10px;
+
+
+}
+
+
+
+.candle.fire{
+
+
+background:
+
+linear-gradient(
+orange,
+yellow
+);
+
+
+box-shadow:
+
+0 0 20px orange;
+
+
+}
+
+
+
+
+
+
+/* decorations */
+
+
+#decoration-layer{
+
+
+position:absolute;
+
+
+top:70px;
+
+
+left:0;
+
+
+width:220px;
+
+
+height:100px;
+
+
+z-index:80;
+
+
+}
+
+
+
+
+.cake-sticker{
+
+
+position:absolute;
+
+
+width:50px;
+
+
+height:50px;
+
+
+object-fit:contain;
+
+
+cursor:
+url("images/heart.png") 16 16,
+pointer;
+
+
+}
+
+
+/* ===============================
+OPTIONS
+=============================== */
+
+
+.custom-step{
+
+
+background:
+
+rgba(255,255,255,.7);
+
+
+padding:25px;
+
+
+margin:25px auto;
+
+
+border-radius:30px;
+
+
+max-width:600px;
+
+
+backdrop-filter:blur(10px);
+
+
+}
+
+
+
+.choice-grid{
+
+
+display:grid;
+
+
+grid-template-columns:repeat(2,1fr);
+
+
+gap:15px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+MESSAGE CARDS
+=============================== */
+
+
+.cards{
+
+
+display:grid;
+
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+
+gap:25px;
+
+
+max-width:900px;
+
+
+margin:auto;
+
+
+}
+
+
+
+.love-card{
+
+
+height:180px;
+
+
+perspective:1000px;
+
+
+cursor:
+url("images/heart.png") 16 16,
+pointer;
+
+
+}
+
+
+
+.love-card .front,
+.love-card .back{
+
+transform-style:preserve-3d;
+
+
+
+position:absolute;
+
+
+width:100%;
+
+height:100%;
+
+
+display:flex;
+
+
+align-items:center;
+
+
+justify-content:center;
+
+
+border-radius:25px;
+
+
+backface-visibility:hidden;
+
+
+background:white;
+
+
+box-shadow:
+
+0 10px 30px var(--shadow);
+
+
+padding:20px;
+
+
+}
+
+
+
+.love-card{
+
+
+position:relative;
+
+
+}
+
+.love-card .front{
+
+transform:rotateY(0deg);
+
+}
+
+
+.love-card .back{
+
+transform:rotateY(180deg);
+
+}
+
+
+
+.love-card.flip .front{
+
+transform:rotateY(180deg);
+
+}
+
+
+
+.love-card.flip .back{
+
+transform:rotateY(360deg);
+
+}
+
+
+
+
+.front,
+.back{
+
+
+transition:.6s;
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+WISH POSTCARD
+=============================== */
+
+
+.postcard{
+
+
+background:white;
+
+
+max-width:500px;
+
+
+margin:40px auto;
+
+
+padding:30px;
+
+
+border-radius:30px;
+
+
+box-shadow:
+
+0 20px 40px var(--shadow);
+
+
+}
+
+
+
+#wish-input{
+
+
+width:100%;
+
+
+height:200px;
+
+
+border:none;
+
+
+outline:none;
+
+
+resize:none;
+
+
+padding:20px;
+
+
+border-radius:20px;
+
+
+background:#fff7f8;
+
+
+font-size:16px;
+
+
+}
+
+
+
+#saved-wish{
+
+
+margin-top:20px;
+
+
+padding:20px;
+
+
+background:#fff7e8;
+
+
+border-radius:20px;
+
+
+min-height:80px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+MUSIC
+=============================== */
+
+
+#music-btn{
+
+
+position:fixed;
+
+
+right:20px;
+
+bottom:30px;
+
+
+z-index:100;
+
+
+}
+
+
+
+
+
+
+/* ===============================
+NAV
+=============================== */
+
+
+nav{
+
+
+position:fixed;
+
+
+bottom:20px;
+
+
+left:10%;
+
+
+width:80%;
+
+
+background:white;
+
+
+padding:15px;
+
+
+border-radius:50px;
+
+
+display:flex;
+
+
+justify-content:space-around;
+
+
+z-index:100;
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+MOBILE
+=============================== */
+
+
+@media(max-width:600px){
+
+
+h1{
+
+font-size:35px;
+
+}
+
+
+
+.cards{
+
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.choice-grid{
+
+
+grid-template-columns:1fr;
+
+}
+
+
+
+}
+
+/* ===============================
+WISH CAKE
+=============================== */
+
+
+#wish-cake{
+
+margin:40px auto;
+
+min-height:220px;
+
+}
+
+
+
+#wish-cake .cake{
+
+transform:scale(1);
+
+margin:auto;
+
+}
+
+
+
+#blow-candle{
+
+margin:20px;
+
+font-size:18px;
+
+}
+/* ===============================
+CELEBRATION
+=============================== */
+
+#celebration{
+
+position:fixed;
+
+inset:0;
+
+background:
+rgba(255,255,255,.85);
+
+display:none;
+
+align-items:center;
+
+justify-content:center;
+
+z-index:9999;
+
+overflow:hidden;
+
+}
+
+
+
+.congrats-box{
+
+background:white;
+
+padding:40px;
+
+border-radius:35px;
+
+text-align:center;
+
+box-shadow:
+0 20px 50px rgba(255,150,200,.4);
+
+animation:
+pop .6s ease;
+
+}
+
+
+
+.congrats-box h1{
+
+color:#ff8fba;
+
+font-size:40px;
+
+}
+
+
+
+.congrats-box p{
+
+font-size:20px;
+
+line-height:1.6;
+
+}
+
+
+
+
+
+@keyframes pop{
+
+0%{
+
+transform:scale(.3);
+
+opacity:0;
+
+}
+
+
+100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+
+
+/* FIREWORKS */
+
+.fireworks{
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+}
+
+
+.fireworks::before,
+.fireworks::after{
+
+
+content:"✨ ✦ ✧ ✨ ✦ ✧";
+
+
+position:absolute;
+
+font-size:50px;
+
+animation:
+explode 1.5s infinite;
+
+
+}
+
+
+
+.fireworks::before{
+
+top:20%;
+
+left:25%;
+
+}
+
+
+.fireworks::after{
+
+top:50%;
+
+right:20%;
+
+animation-delay:.5s;
+
+}
+
+
+
+
+@keyframes explode{
+
+0%{
+
+transform:scale(.3);
+
+opacity:0;
+
+}
+
+
+30%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:scale(2);
+
+opacity:0;
+
+}
+
+}
+
+/* ==================================
+   HOME PAGE LAYOUT IMPROVEMENT
+   Paste this at the END of style.css
+================================== */
+
+#home-page {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: min(1050px, calc(100% - 32px));
+  min-height: calc(100svh - 32px);
+
+  margin: 16px auto;
+  padding:
+    clamp(45px, 7vw, 85px)
+    clamp(22px, 6vw, 70px)
+    100px;
+
+  overflow: hidden;
+  text-align: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 38px;
+
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(255, 255, 255, 0.95),
+      transparent 32%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 247, 232, 0.84),
+      rgba(255, 210, 229, 0.7),
+      rgba(204, 238, 255, 0.65)
+    );
+
+  box-shadow:
+    0 25px 70px rgba(215, 125, 162, 0.2);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* Keeps homepage content above decorative effects */
+
+#home-page > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Soft decorative glow inside the card */
+
+#home-page::before,
+#home-page::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(4px);
+}
+
+#home-page::before {
+  top: -100px;
+  right: -80px;
+
+  width: 270px;
+  height: 270px;
+
+  background: rgba(234, 220, 255, 0.55);
+}
+
+#home-page::after {
+  bottom: -120px;
+  left: -70px;
+
+  width: 300px;
+  height: 300px;
+
+  background: rgba(204, 238, 255, 0.48);
+}
+
+/* Date label */
+
+#home-page .magazine-title {
+  margin: 0 0 28px;
+
+  padding: 9px 20px;
+
+  border: 1px solid rgba(215, 125, 162, 0.18);
+  border-radius: 999px;
+
+  color: #bd6e91;
+  background: rgba(255, 255, 255, 0.72);
+
+  box-shadow:
+    0 8px 25px rgba(215, 125, 162, 0.1);
+
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Main title */
+
+#home-page h1 {
+  max-width: 850px;
+
+  margin: 0 0 22px;
+
+  color: white;
+
+  font-size: clamp(3.3rem, 9vw, 7rem);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+
+  text-shadow:
+    0 3px 0 rgba(215, 125, 162, 0.2),
+    0 0 22px rgba(255, 159, 196, 0.65);
+}
+
+/* Birthday symbols under title */
+
+#home-page > p:not(.home-note) {
+  margin: 0 0 42px;
+
+  color: rgba(121, 105, 119, 0.75);
+
+  font-size: clamp(13px, 2vw, 16px);
+  line-height: 1.7;
+}
+
+/* Three action buttons */
+
+.home-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  width: min(820px, 100%);
+
+  margin: 0;
+  gap: 18px;
+}
+
+/* Remove anchor underline around buttons */
+
+.home-buttons a {
+  display: block;
+  height: 100%;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Current HTML uses <a><button> */
+
+.home-buttons button {
+  width: 100%;
+  min-height: 145px;
+
+  padding: 24px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 27px;
+
+  color: #c26e94;
+  background: rgba(255, 255, 255, 0.66);
+
+  font-size: 17px;
+  line-height: 1.7;
+
+  box-shadow:
+    0 14px 35px rgba(215, 125, 162, 0.14);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.home-buttons button:hover {
+  transform: translateY(-7px);
+
+  background: rgba(255, 255, 255, 0.93);
+
+  box-shadow:
+    0 20px 42px rgba(215, 125, 162, 0.23);
+}
+
+.home-buttons button:focus-visible {
+  outline: 3px solid rgba(215, 125, 162, 0.45);
+  outline-offset: 5px;
+}
+
+/* Bottom note */
+
+.home-note {
+  margin: 35px 0 0;
+
+  color: rgba(121, 105, 119, 0.64);
+
+  font-size: 14px;
+  letter-spacing: 0.03em;
+}
+
+/* Move stickers behind the main content */
+
+.floating-stickers {
+  z-index: 1;
+}
+
+/* Make the decorative images more visible */
+
+.pompompurin {
+  width: clamp(45px, 6vw, 75px);
+  height: auto;
+
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  border-radius: 18px;
+
+  opacity: 0.58;
+
+  box-shadow:
+    0 12px 30px rgba(215, 125, 162, 0.15);
+}
+
+/* Reposition the decorations */
+
+.p1 {
+  top: 7%;
+  left: 3%;
+}
+
+.p2 {
+  right: 3%;
+  bottom: 10%;
+}
+
+.p3 {
+  top: 52%;
+  left: 4%;
+}
+
+/* Refine music control */
+
+#music-btn {
+  right: 20px;
+  bottom: 20px;
+
+  padding: 12px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+
+  background: rgba(255, 255, 255, 0.78);
+
+  box-shadow:
+    0 12px 30px rgba(215, 125, 162, 0.2);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 760px) {
+  #home-page {
+    width: calc(100% - 20px);
+    min-height: calc(100svh - 20px);
+
+    margin: 10px auto;
+
+    padding:
+      46px
+      18px
+      95px;
+
+    border-radius: 28px;
+  }
+
+  #home-page .magazine-title {
+    margin-bottom: 25px;
+  }
+
+  #home-page h1 {
+    margin-bottom: 20px;
+
+    font-size: clamp(3rem, 17vw, 5.2rem);
+    line-height: 1;
+  }
+
+  #home-page > p:not(.home-note) {
+    max-width: 280px;
+    margin-bottom: 32px;
+  }
+
+  .home-buttons {
+    grid-template-columns: 1fr;
+
+    width: min(390px, 100%);
+    gap: 13px;
+  }
+
+  .home-buttons button {
+    min-height: 92px;
+
+    padding: 16px 20px;
+
+    border-radius: 22px;
+
+    font-size: 16px;
+  }
+
+  .home-note {
+    max-width: 260px;
+    margin-top: 28px;
+  }
+
+  .pompompurin {
+    width: 48px;
+    opacity: 0.38;
+  }
+
+  .p3 {
+    display: none;
+  }
+
+  #music-btn {
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+.home-button {
+  display: flex !important;
+  min-height: 145px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 24px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 27px;
+
+  color: #c26e94 !important;
+  background: rgba(255, 255, 255, 0.66);
+
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 1.4;
+
+  box-shadow:
+    0 14px 35px rgba(215, 125, 162, 0.14);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.home-button:hover {
+  transform: translateY(-7px);
+
+  background: rgba(255, 255, 255, 0.93);
+
+  box-shadow:
+    0 20px 42px rgba(215, 125, 162, 0.23);
+}
+
+.button-icon {
+  font-size: 32px;
+}
+
+@media (max-width: 760px) {
+  .home-button {
+    min-height: 92px;
+    flex-direction: row;
+
+    padding: 16px 22px;
+
+    border-radius: 22px;
+
+    font-size: 16px;
+  }
+
+  .button-icon {
+    font-size: 27px;
+  }
+}
+
+/* ==================================================
+   OPTIMIZED CAKE CREATOR PAGE
+   Paste at the END of style.css
+================================================== */
+
+
+/* ===============================
+BACK HOME BUTTON
+=============================== */
+
+.back-home {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 200;
+
+  padding: 11px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+
+  color: #bd6f91;
+  background: rgba(255, 255, 255, 0.78);
+
+  box-shadow:
+    0 10px 28px rgba(215, 125, 162, 0.18);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+
+/* ===============================
+MAIN CAKE PAGE
+=============================== */
+
+#cake-game {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns:
+    minmax(320px, 0.9fr)
+    minmax(460px, 1.1fr);
+
+  align-items: start;
+
+  width: min(1180px, calc(100% - 40px));
+  min-height: calc(100svh - 50px);
+
+  margin: 25px auto 110px;
+  padding:
+    65px
+    clamp(28px, 5vw, 65px)
+    70px;
+
+  column-gap: clamp(28px, 5vw, 65px);
+  row-gap: 18px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  border-radius: 42px;
+
+  background:
+    radial-gradient(
+      circle at 10% 5%,
+      rgba(255, 255, 255, 0.95),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 95% 85%,
+      rgba(234, 220, 255, 0.55),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 247, 232, 0.86),
+      rgba(255, 210, 229, 0.7),
+      rgba(204, 238, 255, 0.62)
+    );
+
+  box-shadow:
+    0 28px 80px rgba(215, 125, 162, 0.2);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* Keep page content above background glows */
+
+#cake-game > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Decorative background circles */
+
+#cake-game::before,
+#cake-game::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+#cake-game::before {
+  top: -110px;
+  right: -90px;
+
+  width: 310px;
+  height: 310px;
+
+  background: rgba(255, 255, 255, 0.38);
+}
+
+#cake-game::after {
+  bottom: -130px;
+  left: -100px;
+
+  width: 340px;
+  height: 340px;
+
+  background: rgba(204, 238, 255, 0.42);
+}
+
+
+/* ===============================
+PAGE HEADING
+=============================== */
+
+#cake-game > h1 {
+  grid-column: 1 / -1;
+
+  max-width: 900px;
+
+  margin: 0 auto 4px;
+
+  color: white;
+
+  font-size: clamp(2.8rem, 6vw, 5.3rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  text-align: center;
+
+  text-shadow:
+    0 3px 0 rgba(215, 125, 162, 0.18),
+    0 0 24px rgba(255, 159, 196, 0.62);
+}
+
+#cake-game > p {
+  grid-column: 1 / -1;
+
+  margin: 0 0 32px;
+
+  color: rgba(121, 105, 119, 0.76);
+
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+
+/* ===============================
+STICKY CAKE PREVIEW
+=============================== */
+
+#cake-preview {
+  grid-column: 1;
+  grid-row: 3 / span 6;
+
+  position: sticky;
+  top: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 520px;
+  padding: 75px 25px 35px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 34px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.92),
+      rgba(255, 247, 250, 0.65)
+    );
+
+  box-shadow:
+    inset 0 0 40px rgba(255, 210, 229, 0.16),
+    0 20px 45px rgba(215, 125, 162, 0.14);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+
+/* Preview label */
+
+#cake-preview::before {
+  content: "LIVE CAKE PREVIEW";
+
+  position: absolute;
+  top: 24px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  padding: 8px 16px;
+
+  border: 1px solid rgba(215, 125, 162, 0.14);
+  border-radius: 999px;
+
+  color: #bd6f91;
+  background: rgba(255, 255, 255, 0.75);
+
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.18em;
+
+  white-space: nowrap;
+}
+
+
+/* Decorative preview platform */
+
+#cake-preview::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  bottom: 72px;
+
+  width: 270px;
+  height: 38px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(215, 125, 162, 0.2),
+      transparent 70%
+    );
+
+  filter: blur(5px);
+}
+
+
+/* Make cake larger on desktop */
+
+#cake-preview .cake {
+  z-index: 2;
+
+  margin: 30px auto 70px;
+
+  transform: scale(1.3);
+  transform-origin: center center;
+}
+
+
+/* ===============================
+CUSTOMIZATION PANELS
+=============================== */
+
+#cake-game > .custom-step {
+  grid-column: 2;
+
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+  padding: 25px;
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 26px;
+
+  background: rgba(255, 255, 255, 0.62);
+
+  box-shadow:
+    0 14px 35px rgba(215, 125, 162, 0.1);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+#cake-game > .custom-step:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255, 255, 255, 0.76);
+
+  box-shadow:
+    0 18px 42px rgba(215, 125, 162, 0.14);
+}
+
+
+/* Section title */
+
+.custom-step h3 {
+  margin: 0 0 18px;
+
+  color: #bb6c90;
+
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+
+/* Section description */
+
+.custom-step > p {
+  margin: -7px 0 17px;
+
+  color: rgba(121, 105, 119, 0.7);
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* ===============================
+CHOICE BUTTONS
+=============================== */
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.choice-grid button {
+  width: 100%;
+  min-height: 82px;
+
+  padding: 14px 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.68);
+
+  font-size: 14px;
+  line-height: 1.55;
+
+  box-shadow:
+    0 8px 22px rgba(215, 125, 162, 0.1);
+}
+
+.choice-grid button:hover {
+  transform: translateY(-4px);
+
+  background: white;
+
+  box-shadow:
+    0 14px 28px rgba(215, 125, 162, 0.18);
+}
+
+
+/* Selected-option appearance, if JS adds active */
+
+.choice-grid button.active,
+.choice-grid button.selected {
+  border-color: rgba(215, 125, 162, 0.55);
+
+  color: #bd668d;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 210, 229, 0.65)
+    );
+
+  box-shadow:
+    0 0 0 3px rgba(255, 210, 229, 0.45),
+    0 14px 30px rgba(215, 125, 162, 0.18);
+}
+
+
+/* ===============================
+DECORATION BUTTONS
+=============================== */
+
+.preset-decoration {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-bottom: 22px;
+}
+
+.preset-decoration button {
+  width: 100%;
+  min-height: 62px;
+
+  padding: 12px 10px;
+
+  border-radius: 18px;
+
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+
+/* ===============================
+FILE UPLOAD
+=============================== */
+
+#decoration-upload {
+  display: block;
+
+  width: 100%;
+
+  margin: 10px 0 18px;
+  padding: 10px;
+
+  border: 1px dashed rgba(215, 125, 162, 0.45);
+  border-radius: 17px;
+
+  color: #a96c87;
+  background: rgba(255, 255, 255, 0.64);
+
+  font-size: 13px;
+}
+
+#decoration-upload::file-selector-button {
+  margin-right: 12px;
+  padding: 9px 14px;
+
+  border: none;
+  border-radius: 999px;
+
+  color: #bd6f91;
+  background: #fff0f6;
+
+  font: inherit;
+  font-weight: bold;
+
+  cursor:
+    url("images/heart.png") 16 16,
+    pointer;
+}
+
+
+/* Decoration management buttons */
+
+#delete-sticker,
+#clear-stickers {
+  width: calc(50% - 7px);
+
+  margin-top: 4px;
+  padding: 12px 10px;
+
+  border-radius: 17px;
+
+  font-size: 13px;
+}
+
+#delete-sticker {
+  margin-right: 8px;
+
+  color: #bd6f91;
+  background: rgba(255, 232, 240, 0.88);
+}
+
+#clear-stickers {
+  color: #6f91a5;
+  background: rgba(225, 245, 255, 0.88);
+}
+
+
+/* ===============================
+CANDLE SECTION
+=============================== */
+
+#light-candles {
+  width: 100%;
+
+  padding: 15px 20px;
+
+  border-radius: 18px;
+
+  font-size: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 233, 168, 0.9),
+      rgba(255, 210, 229, 0.9)
+    );
+}
+
+
+/* ===============================
+FINISH BUTTON
+=============================== */
+
+#finish-cake {
+  grid-column: 2;
+
+  width: 100%;
+
+  margin-top: 4px;
+  padding: 18px 25px;
+
+  border-radius: 22px;
+
+  color: white;
+
+  font-size: 18px;
+  letter-spacing: 0.02em;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ee9abc,
+      #cfaef2,
+      #9eddf2
+    );
+
+  box-shadow:
+    0 18px 38px rgba(215, 125, 162, 0.26);
+}
+
+#finish-cake:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 24px 45px rgba(215, 125, 162, 0.34);
+}
+
+
+/* ===============================
+CAKE RESULT PAGE
+=============================== */
+
+#cake-result {
+  position: relative;
+  z-index: 3;
+
+  display: none;
+
+  width: min(850px, calc(100% - 32px));
+
+  margin: 30px auto 110px;
+  padding:
+    clamp(45px, 7vw, 75px)
+    clamp(22px, 6vw, 65px);
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  border-radius: 40px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255, 255, 255, 0.95),
+      transparent 38%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 247, 232, 0.88),
+      rgba(255, 210, 229, 0.72),
+      rgba(204, 238, 255, 0.68)
+    );
+
+  box-shadow:
+    0 28px 75px rgba(215, 125, 162, 0.22);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* Works if your JavaScript adds an active class */
+
+#cake-result.active {
+  display: block;
+}
+
+#cake-result h1 {
+  margin: 0 0 35px;
+
+  font-size: clamp(2.7rem, 7vw, 4.8rem);
+  line-height: 1;
+}
+
+#final-cake {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 360px;
+  margin: 0 auto 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.54);
+
+  box-shadow:
+    inset 0 0 40px rgba(255, 210, 229, 0.18);
+}
+
+
+/* Result information */
+
+.cake-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin: 0 auto 30px;
+}
+
+.cake-summary p {
+  min-width: 0;
+  margin: 0;
+  padding: 17px 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+
+  color: #a96c87;
+  background: rgba(255, 255, 255, 0.6);
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.cake-summary span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--text);
+
+  font-weight: bold;
+}
+
+
+/* ===============================
+DECORATIONS ON THIS PAGE
+=============================== */
+
+#cake-game ~ .floating-stickers,
+.floating-stickers {
+  z-index: 1;
+}
+
+#cake-game .cake-sticker {
+  touch-action: none;
+}
+
+
+/* ===============================
+TABLET
+=============================== */
+
+@media (max-width: 900px) {
+
+  #cake-game {
+    grid-template-columns: 1fr;
+
+    width: calc(100% - 24px);
+    min-height: auto;
+
+    margin: 12px auto 100px;
+    padding:
+      62px
+      clamp(18px, 5vw, 38px)
+      55px;
+
+    border-radius: 32px;
+
+    row-gap: 16px;
+  }
+
+  #cake-game > h1,
+  #cake-game > p,
+  #cake-preview,
+  #cake-game > .custom-step,
+  #finish-cake {
+    grid-column: 1;
+  }
+
+  #cake-preview {
+    grid-row: auto;
+
+    position: relative;
+    top: auto;
+
+    min-height: 430px;
+    margin-bottom: 8px;
+  }
+
+  #cake-preview .cake {
+    transform: scale(1.2);
+  }
+
+  #cake-game > h1 {
+    font-size: clamp(2.8rem, 10vw, 4.5rem);
+  }
+
+  #cake-game > p {
+    margin-bottom: 18px;
+  }
+
+  #finish-cake {
+    margin-top: 6px;
+  }
+}
+
+
+/* ===============================
+MOBILE
+=============================== */
+
+@media (max-width: 560px) {
+
+  .back-home {
+    top: 12px;
+    left: 12px;
+
+    padding: 9px 14px;
+
+    font-size: 12px;
+  }
+
+  #cake-game {
+    width: calc(100% - 16px);
+
+    margin: 8px auto 90px;
+    padding:
+      65px
+      14px
+      40px;
+
+    border-radius: 25px;
+  }
+
+  #cake-game > h1 {
+    margin-bottom: 7px;
+
+    font-size: clamp(2.45rem, 13vw, 3.5rem);
+  }
+
+  #cake-game > p {
+    margin-bottom: 14px;
+
+    font-size: 14px;
+  }
+
+  #cake-preview {
+    min-height: 360px;
+    padding: 65px 12px 20px;
+
+    border-radius: 24px;
+  }
+
+  #cake-preview .cake {
+    margin-bottom: 55px;
+
+    transform: scale(1.05);
+  }
+
+  #cake-game > .custom-step {
+    padding: 19px 15px;
+
+    border-radius: 22px;
+  }
+
+  .custom-step h3 {
+    font-size: 15px;
+  }
+
+  .choice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+  }
+
+  .choice-grid button {
+    min-height: 73px;
+
+    padding: 11px 8px;
+
+    border-radius: 17px;
+
+    font-size: 12px;
+  }
+
+  .preset-decoration {
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+  }
+
+  .preset-decoration button {
+    min-height: 52px;
+  }
+
+  #delete-sticker,
+  #clear-stickers {
+    width: 100%;
+
+    margin: 7px 0 0;
+  }
+
+  #finish-cake {
+    padding: 16px 18px;
+
+    font-size: 16px;
+  }
+
+  #cake-result {
+    width: calc(100% - 16px);
+
+    margin: 8px auto 90px;
+    padding:
+      55px
+      15px
+      40px;
+
+    border-radius: 26px;
+  }
+
+  #final-cake {
+    min-height: 310px;
+
+    border-radius: 22px;
+  }
+
+  .cake-summary {
+    grid-template-columns: 1fr;
+  }
+
+  #music-btn {
+    right: 12px;
+    bottom: 12px;
+  }
+}
+
+/* ==================================================
+   AMSTERDAM TO ANYANG MAZE PAGE
+================================================== */
+
+
+/* ===============================
+PAGE BACKGROUND
+=============================== */
+
+.maze-page-body {
+  min-height: 100vh;
+  position: relative;
+
+  color: var(--text);
+
+  background: #f9eff3;
+
+  overflow-x: hidden;
+}
+
+.maze-page-body::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+
+  background:
+    linear-gradient(
+      rgba(255, 249, 251, 0.78),
+      rgba(250, 243, 248, 0.8)
+    ),
+    url("images/journey-bg.jpg") center / cover no-repeat;
+
+  filter:
+    saturate(0.68)
+    contrast(0.82)
+    brightness(1.05);
+}
+
+.maze-page-body::after {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(255, 210, 229, 0.32),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(204, 238, 255, 0.3),
+      transparent 34%
+    );
+}
+
+
+/* ===============================
+BACK HOME
+=============================== */
+
+.maze-back-home {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 200;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+
+  color: #ad6f8b;
+  background: rgba(255, 255, 255, 0.75);
+
+  box-shadow:
+    0 10px 30px rgba(139, 95, 116, 0.14);
+
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.maze-back-home:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255, 255, 255, 0.95);
+}
+
+
+/* ===============================
+MAIN CONTAINER
+=============================== */
+
+#journey-page {
+  position: relative;
+  z-index: 2;
+
+  width: min(1240px, calc(100% - 36px));
+
+  margin: 18px auto 100px;
+
+  padding:
+    clamp(70px, 8vw, 105px)
+    clamp(22px, 5vw, 65px)
+    clamp(40px, 6vw, 70px);
+
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  border-radius: 42px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.64),
+      rgba(255, 247, 251, 0.58)
+    );
+
+  box-shadow:
+    0 30px 90px rgba(120, 82, 102, 0.16);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* ===============================
+PAGE HEADER
+=============================== */
+
+.journey-header {
+  max-width: 850px;
+
+  margin: 0 auto 45px;
+
+  text-align: center;
+}
+
+.journey-label {
+  display: inline-block;
+
+  margin: 0 0 21px;
+  padding: 9px 17px;
+
+  border: 1px solid rgba(184, 111, 145, 0.14);
+  border-radius: 999px;
+
+  color: #a96887;
+  background: rgba(255, 255, 255, 0.68);
+
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+}
+
+.journey-header h1 {
+  margin: 0;
+
+  color: #fff;
+
+  font-size: clamp(3.2rem, 8vw, 6.8rem);
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+
+  text-shadow:
+    0 2px 0 rgba(184, 111, 145, 0.16),
+    0 0 24px rgba(234, 151, 188, 0.42);
+}
+
+.journey-header h1 span {
+  display: block;
+
+  color: #cf8da9;
+}
+
+.journey-description {
+  max-width: 610px;
+
+  margin: 25px auto 0;
+
+  color: rgba(92, 75, 87, 0.73);
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* ===============================
+TWO-COLUMN LAYOUT
+=============================== */
+
+.journey-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(440px, 1.15fr)
+    minmax(350px, 0.85fr);
+
+  align-items: stretch;
+
+  gap: 22px;
+}
+
+.journey-panel {
+  min-width: 0;
+
+  padding: 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.59);
+
+  box-shadow:
+    0 18px 45px rgba(121, 85, 103, 0.11);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.panel-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  margin-bottom: 20px;
+}
+
+.panel-heading > div {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.panel-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  color: #a96887;
+  background: rgba(255, 221, 234, 0.72);
+
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.panel-heading h2 {
+  margin: 0;
+
+  color: #9c627e;
+
+  font-size: 21px;
+}
+
+.live-indicator,
+#move-counter {
+  flex-shrink: 0;
+
+  padding: 7px 11px;
+
+  border-radius: 999px;
+
+  color: rgba(106, 85, 97, 0.72);
+  background: rgba(255, 255, 255, 0.78);
+
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.09em;
+}
+
+
+/* ===============================
+3D GLOBE
+=============================== */
+
+#globe-container {
+  position: relative;
+
+  width: 100%;
+  height: 430px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 25px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(205, 226, 238, 0.55),
+      rgba(241, 226, 237, 0.54)
+    );
+}
+
+#globeViz {
+  width: 100%;
+  height: 100%;
+}
+
+#globeViz canvas {
+  display: block;
+}
+
+
+/* ===============================
+TRAVEL ANIMATION
+=============================== */
+
+.travel-progress {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: 19px;
+}
+
+.travel-city {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  min-width: 95px;
+}
+
+.travel-city-end {
+  justify-content: flex-end;
+
+  text-align: right;
+}
+
+.city-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  font-size: 18px;
+}
+
+.travel-city strong,
+.travel-city small {
+  display: block;
+}
+
+.travel-city strong {
+  color: #94627a;
+
+  font-size: 12px;
+}
+
+.travel-city small {
+  margin-top: 2px;
+
+  color: rgba(96, 79, 89, 0.62);
+
+  font-size: 10px;
+}
+
+.travel-line {
+  position: relative;
+
+  height: 45px;
+
+  overflow: hidden;
+}
+
+.travel-dashes {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+
+  height: 3px;
+
+  transform: translateY(-50%);
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(203, 140, 169, 0.53) 0 12px,
+      transparent 12px 21px
+    );
+}
+
+#travel-person {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 2;
+
+  transform: translateY(-50%);
+
+  font-size: 25px;
+}
+
+#travel-person.complete-journey {
+  animation:
+    journeyWalk 3.2s
+    cubic-bezier(0.45, 0, 0.25, 1)
+    forwards;
+}
+
+@keyframes journeyWalk {
+  0% {
+    left: 0;
+    transform:
+      translateY(-50%)
+      rotate(-3deg);
+  }
+
+  20% {
+    transform:
+      translateY(-65%)
+      rotate(3deg);
+  }
+
+  40% {
+    transform:
+      translateY(-50%)
+      rotate(-3deg);
+  }
+
+  60% {
+    transform:
+      translateY(-65%)
+      rotate(3deg);
+  }
+
+  80% {
+    transform:
+      translateY(-50%)
+      rotate(-3deg);
+  }
+
+  100% {
+    left: calc(100% - 28px);
+
+    transform:
+      translateY(-55%)
+      rotate(0);
+  }
+}
+
+
+/* ===============================
+MAZE GAME
+=============================== */
+
+.maze-game-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.maze-instructions {
+  margin: -4px 0 16px;
+
+  color: rgba(91, 74, 85, 0.68);
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.maze-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 1;
+
+  min-height: 390px;
+
+  padding: 17px;
+
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.58),
+      rgba(255, 250, 252, 0.68)
+    );
+}
+
+#maze {
+  display: grid;
+
+  gap: 4px;
+
+  outline: none;
+
+  touch-action: none;
+}
+
+.maze-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 31px;
+  height: 31px;
+
+  border-radius: 9px;
+
+  font-size: 15px;
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+
+.maze-wall {
+  background: rgba(139, 118, 132, 0.2);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
+.maze-path {
+  background: rgba(255, 255, 255, 0.71);
+}
+
+.maze-start {
+  background: rgba(204, 238, 255, 0.66);
+}
+
+.maze-goal {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 210, 229, 0.9),
+      rgba(234, 220, 255, 0.9)
+    );
+
+  box-shadow:
+    0 0 18px rgba(215, 125, 162, 0.19);
+}
+
+.maze-player {
+  background: rgba(255, 255, 255, 0.96);
+
+  box-shadow:
+    0 0 0 2px rgba(207, 139, 172, 0.37),
+    0 7px 16px rgba(149, 104, 127, 0.14);
+
+  transform: scale(1.05);
+}
+
+
+/* ===============================
+MAZE CONTROLS
+=============================== */
+
+.maze-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 52px);
+  grid-template-areas:
+    ". up ."
+    "left down right";
+
+  justify-content: center;
+
+  gap: 7px;
+
+  margin: 17px auto 0;
+}
+
+.maze-control {
+  width: 52px;
+  height: 46px;
+
+  padding: 0;
+
+  border-radius: 16px;
+
+  color: #a96887;
+  background: rgba(255, 255, 255, 0.77);
+
+  font-size: 19px;
+
+  box-shadow:
+    0 8px 20px rgba(142, 100, 121, 0.1);
+}
+
+.maze-up {
+  grid-area: up;
+}
+
+.maze-left {
+  grid-area: left;
+}
+
+.maze-down {
+  grid-area: down;
+}
+
+.maze-right {
+  grid-area: right;
+}
+
+.maze-control:active {
+  transform: scale(0.9);
+}
+
+
+/* ===============================
+MAZE FOOTER
+=============================== */
+
+.maze-footer {
+  margin-top: 17px;
+
+  text-align: center;
+}
+
+#maze-status {
+  min-height: 22px;
+
+  margin: 0 0 13px;
+
+  color: rgba(98, 75, 88, 0.73);
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+#reset-maze {
+  width: 100%;
+
+  padding: 13px 18px;
+
+  border-radius: 17px;
+
+  font-size: 13px;
+}
+
+
+/* ===============================
+CELEBRATION
+=============================== */
+
+#journey-celebration {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  visibility: hidden;
+  opacity: 0;
+
+  background: rgba(251, 246, 249, 0.8);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  transition:
+    visibility 0.4s ease,
+    opacity 0.4s ease;
+}
+
+#journey-celebration.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.journey-celebration-card {
+  width: min(430px, 100%);
+
+  padding: 43px 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  border-radius: 32px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.93),
+      rgba(255, 233, 241, 0.88)
+    );
+
+  box-shadow:
+    0 25px 70px rgba(129, 88, 107, 0.18);
+
+  text-align: center;
+
+  animation: journeyCelebrationPop 0.6s ease;
+}
+
+.celebration-hearts {
+  margin-bottom: 13px;
+
+  color: #c57c9c;
+
+  font-size: 29px;
+  letter-spacing: 0.2em;
+}
+
+.journey-celebration-card h2 {
+  margin: 0 0 12px;
+
+  color: #ba7594;
+
+  font-size: clamp(2.2rem, 8vw, 3.5rem);
+}
+
+.journey-celebration-card p {
+  margin: 0 0 25px;
+
+  color: rgba(91, 73, 84, 0.7);
+
+  font-size: 14px;
+}
+
+#play-again {
+  width: 100%;
+
+  margin-bottom: 11px;
+}
+
+.celebration-home-link {
+  display: block;
+
+  padding: 12px;
+
+  color: #9a7084;
+
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@keyframes journeyCelebrationPop {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(25px)
+      scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* ===============================
+TABLET
+=============================== */
+
+@media (max-width: 970px) {
+
+  .journey-layout {
+    grid-template-columns: 1fr;
+  }
+
+  #globe-container {
+    height: 390px;
+  }
+
+  .maze-wrapper {
+    min-height: 360px;
+  }
+
+}
+
+
+/* ===============================
+MOBILE
+=============================== */
+
+@media (max-width: 600px) {
+
+  .maze-back-home {
+    top: 12px;
+    left: 12px;
+
+    padding: 9px 14px;
+
+    font-size: 11px;
+  }
+
+  #journey-page {
+    width: calc(100% - 16px);
+
+    margin: 8px auto 85px;
+
+    padding:
+      68px
+      12px
+      28px;
+
+    border-radius: 27px;
+  }
+
+  .journey-header {
+    margin-bottom: 29px;
+  }
+
+  .journey-header h1 {
+    font-size: clamp(3rem, 15vw, 4.5rem);
+  }
+
+  .journey-description {
+    max-width: 300px;
+
+    font-size: 13px;
+  }
+
+  .journey-panel {
+    padding: 15px;
+
+    border-radius: 23px;
+  }
+
+  .panel-heading {
+    align-items: center;
+
+    margin-bottom: 15px;
+  }
+
+  .panel-heading h2 {
+    font-size: 17px;
+  }
+
+  #globe-container {
+    height: 300px;
+
+    border-radius: 19px;
+  }
+
+  .travel-progress {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+  .travel-city,
+  .travel-city-end {
+    justify-content: flex-start;
+
+    text-align: left;
+  }
+
+  .travel-line {
+    width: 100%;
+  }
+
+  .maze-wrapper {
+    min-height: auto;
+
+    padding: 10px;
+  }
+
+  .maze-cell {
+    width: min(7.2vw, 28px);
+    height: min(7.2vw, 28px);
+
+    border-radius: 7px;
+
+    font-size: 13px;
+  }
+
+  .maze-controls {
+    grid-template-columns: repeat(3, 48px);
+  }
+
+  .maze-control {
+    width: 48px;
+    height: 43px;
+  }
+
+}
+
+
+/* ===============================
+REDUCED MOTION
+=============================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  #travel-person.complete-journey {
+    animation: none;
+
+    left: calc(100% - 28px);
+  }
+
+}
